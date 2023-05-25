@@ -1,0 +1,15 @@
+{% extends 'monapplication/base.html' %}
+
+{% block content %}
+  <h2>Inscription</h2>
+  <div class="dd">
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+    <a href="{% url  'connexion' %}" class="btn btn-primary">se connecter</a>
+  </form>
+  
+</div>
+{% endblock %}
