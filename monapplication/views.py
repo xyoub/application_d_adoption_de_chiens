@@ -51,6 +51,7 @@ def deconnexion(request):
 def about(request):
     return render(request,'monapplication/about.html')
 
+@login_required
 def menu(request):
    # x={'name':'iliass','age':'21'}
    return render(request,'monapplication/menu.html')
