@@ -27,9 +27,10 @@ urlpatterns = [
     path('inscription/', views.inscription, name='inscription'),
     path('connexion/', views.connexion, name='connexion'),
     path('deconnexion/', views.deconnexion, name='deconnexion'),
-    path('accueil/', views.accueil, name='accueil'),
     path('about/', views.about, name='about'),
-    # path('addproduct/', views.addproduct, name='add_product'),
+    path('menu/',views.menu, name='menu'),
+    path('Acceuil/',views.Acceuil,name='Acceuil'),
+
 ]
 
 
