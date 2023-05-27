@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>animal website</title>
+	{% load static %}
+<link rel="stylesheet"  type="text/css" href="{% static 'Acceuil.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="hero">
+		<div dlass="navbar">
+		 <img src=	"{% static 'images/LOGO 2.png' %}"style="max-width: 	150px;">
+		 <ul>
+			
+<li><a href="#">ABOUT</a></li>
+<li><a href="#">ADOPT ME </a></li>
+<li><a href="#">CONTACT</a></li>
+<li><a href="{% url 'inscription' %}">SIGNUP</a></li>
+     	 </ul>
+		 <div class="navbar-icons"> 
+			<img src="{% static 'images/téléchargement.png' %}">
+			<img src="{% static 'images/adopt me.jpg' %}">
+			<img src="{% static 'images/contact icon.png' %}">
+			<img src="{% static 'images/sign up.png' %}">
+		 </div>
+		</div> 
+		
+			
+			</div>
+			<video autoplay loop muted>
+				<source src="{% static 'images/rrr.mp4'%}" type="video/mp4">
+				
+			  </video>
+			<section class="articles">
+				<article>
+				  <div class="article-wrapper">
+					<figure>
+					  <img src="{% static 'images/dog.jpg'%}" alt="" />
+					</figure>
+					<div class="article-body">
+					  <h2>dogs</h2>
+					  <p>
+						 dogs are loyal.
+					  </p>
+					  <a href="#" class="read-more">
+						Read more <span class="sr-only">about this is some title</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+						  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+						</svg>
+					  </a>
+					</div>
+				  </div>
+				</article>
+				<article>
+			  
+				  <div class="article-wrapper">
+					<figure>
+					  <img src="{% static 'images/cat.jpg' %}" alt="" />
+					</figure>
+					<div class="article-body">
+					  <h2>cats</h2>
+					  <p>
+						 cats are caring!
+					  </p>
+					  <a href="#" class="read-more">
+						Read more <span class="sr-only">about this is some title</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+						  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+						</svg>
+					  </a>
+					</div>
+				  </div>
+				</article>
+				<article>
+			  
+				  <div class="article-wrapper">
+					<figure>
+					  <img src="{% static 'images/Dog-and-horse-image.jpg.webp' %}" alt="" />
+					</figure>
+					<div class="article-body">
+					  <h2>horses</h2>
+					  <p>
+						horses are noble!
+					  </p>
+					  <a href="#" class="read-more">
+						Read more <span class="sr-only">about this is some title</span>
+						<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+						  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+						</svg>
+					  </a>
+					</div>
+				  </div>
+				</article>
+			  </section>
+
+			  <div class="footer-dark">
+	<footer>
+					<div class="container">
+						<div class="row">
+							
+							
+							<div class="col-md-6 item text">
+								<h3>pet paradise</h3>
+								<p>Thank you for choosing Pet Paradise, where we believe every pet deserves paradise. Our mission is to provide the highest quality pet care products and services to enhance the health, happiness, and well-being of your furry friends.</p>
+							</div>
+							<div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+						</div>
+						<p class="copyright">pet paradise © 2018</p>
+					</div>
+	</footer>
+		 
+			  
+
+</body>
+</html>

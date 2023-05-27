@@ -16,7 +16,7 @@ def inscription(request):
             user.set_password(form.cleaned_data['password'])  # Add this line
             user.save()  # Add this line
             login(request, user)
-            return redirect('/accueil/')
+            return redirect('/menu/')
     else:
         form = InscriptionForm()
     return render(request, 'monapplication/inscription.html', {'form': form})
@@ -30,15 +30,15 @@ def connexion(request):
                 user = authenticate(username=username, password=password)
                 if user is not None:
                     login(request, user)
-                    return redirect('/accueil/')  # Replace 'dashboard' with your desired URL name or path
+                    return redirect('/menu/')  # Replace 'dashboard' with your desired URL name or path
     else:
         form = ConnexionForm()
         
-    return render(request, 'monapplication/connexion.html', {'form': form})
+    return render(request,'monapplication/connexion.html', {'form': form})
    
 @login_required
 def accueil(request):
-    return render(request, 'monapplication/accueil.html')
+    return render(request,'monapplication/accueil.html')
 
 
 
@@ -49,7 +49,16 @@ def deconnexion(request):
 
 @login_required
 def about(request):
-    return render(request, 'monapplication/about.html')
+    return render(request,'monapplication/about.html')
+
+def menu(request):
+   # x={'name':'iliass','age':'21'}
+   return render(request,'monapplication/menu.html')
+
+def Acceuil(request):
+   # x={'name':'iliass','age':'21'}
+   return render(request,'monapplication/Acceuil.html')
+
 
 
 # def add_product(request):
