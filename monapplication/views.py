@@ -47,10 +47,16 @@ def deconnexion(request):
     return redirect('/connexion/')
 
 
+def home(request):
+    
+    return render(request,'monapplication/home.html')
+
+  
 @login_required
 def about(request):
     return render(request,'monapplication/about.html')
 
+@login_required
 def menu(request):
    # x={'name':'iliass','age':'21'}
    return render(request,'monapplication/menu.html')
@@ -59,6 +65,9 @@ def Acceuil(request):
    # x={'name':'iliass','age':'21'}
    return render(request,'monapplication/Acceuil.html')
 
+def mesannonces(request):
+   # x={'name':'iliass','age':'21'}
+   return render(request,'monapplication/mesannonces.html')
 
 
 # def add_product(request):

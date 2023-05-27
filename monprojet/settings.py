@@ -112,7 +112,7 @@ MEDIA_URL  = 'images/'
 
 
 STATICFILES_DIRS = [
-    'C:\\Users\\shino\\OneDrive\\Desktop\\application_d_adoption_de_chiens\\static',
+    'C:\\Users\\Ayoub\\Desktop\\application_d_adoption_de_chiens\\static',
 ]
 
 

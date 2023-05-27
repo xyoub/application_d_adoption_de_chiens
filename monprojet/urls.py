@@ -30,6 +30,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('menu/',views.menu, name='menu'),
     path('Acceuil/',views.Acceuil,name='Acceuil'),
+    path('mesannonces/',views.mesannonces,name='mesannonces'),
+    path('home/',views.home,name='home'),
 
 ]
 
