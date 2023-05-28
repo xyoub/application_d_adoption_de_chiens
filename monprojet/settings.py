@@ -31,11 +31,12 @@ AUTH_USER_MODEL = "monapplication.Utilisateur"
 ALLOWED_HOSTS = []
 #----------------------------------------------------------
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.example.com'  # Votre hôte SMTP
+EMAIL_HOST = 'smtp.gmail.com' # Votre hôte SMTP chnou 5asni nhat fiha khasek deber 3la chi serveur smtp
 EMAIL_PORT = 587  # Port SMTP, généralement 587 pour TLS ou 465 pour SSL
 EMAIL_USE_TLS = True  # Si votre serveur SMTP utilise TLS
-EMAIL_HOST_USER = 'pet paradise'  # Votre adresse email
-EMAIL_HOST_PASSWORD = 'slifdahhjfrkwdkh'  # Votre mot de passe email
+EMAIL_HOST_USER = 'boujemaoui.ayoub654@gmail.com'  # Votre adresse email
+EMAIL_HOST_PASSWORD = 'maugzlbifquulflg'  # Votre mot de passe email
+
 
 #----------------------------------------------------------
 

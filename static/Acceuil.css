@@ -21,8 +21,6 @@ body{
   ul{
 	  flex: 1;
 	  text-align: right;
-  }
-  ul {
 	  position: absolute;
 	  top: 80px;
 	  right: 0;

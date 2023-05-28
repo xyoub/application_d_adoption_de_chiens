@@ -76,8 +76,6 @@ def mesannonces(request):
 def annonces(request):
    return render(request,'monapplication/annonces.html')
 
-def contact(request):
-   return render(request,'monapplication/contact.html')
 #-------------------------------------------------------------------
 def contact_view(request):
     if request.method == 'POST':
@@ -97,14 +95,15 @@ def contact_view(request):
             try:
                 email_message.send()
                 messages.success(request, 'Votre message a été envoyé avec succès. Nous vous répondrons bientôt.')
-            except:
+            except Exception as e:
+                messages.error(request,e)
                 messages.error(request, 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer plus tard.')
 
         return redirect('contact')
     else:
         form = ContactForm()
 
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'monapplication/contact.html', {'form': form})
 
 #------------------------------------------------------------------
 
