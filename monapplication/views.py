@@ -4,8 +4,11 @@ from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.decorators import login_required
-from .forms import InscriptionForm, ConnexionForm
+from .forms import InscriptionForm, ConnexionForm 
 # from .forms import ProductForm
+from django.core.mail import EmailMessage
+from django.contrib import messages
+from .forms import ContactForm
 
 
 def inscription(request):
@@ -61,6 +64,7 @@ def menu(request):
    # x={'name':'iliass','age':'21'}
    return render(request,'monapplication/menu.html')
 
+
 def Acceuil(request):
    # x={'name':'iliass','age':'21'}
    return render(request,'monapplication/Acceuil.html')
@@ -68,6 +72,42 @@ def Acceuil(request):
 def mesannonces(request):
    # x={'name':'iliass','age':'21'}
    return render(request,'monapplication/mesannonces.html')
+
+def annonces(request):
+   return render(request,'monapplication/annonces.html')
+
+def contact(request):
+   return render(request,'monapplication/contact.html')
+#-------------------------------------------------------------------
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+
+            email_message = EmailMessage(
+                subject,
+                "Message de {name} <{email}> :\n\n{message}".format(name=name, email=email, message=message),
+                email,
+                ["boujemaoui.ayoub654@gmail.com"],  # changez ceci à votre propre email
+            )
+            try:
+                email_message.send()
+                messages.success(request, 'Votre message a été envoyé avec succès. Nous vous répondrons bientôt.')
+            except:
+                messages.error(request, 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer plus tard.')
+
+        return redirect('contact')
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
+
+#------------------------------------------------------------------
+
 
 
 # def add_product(request):

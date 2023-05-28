@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from monapplication import views
-
+from monapplication.views import contact_view
+from django.views.generic.base import TemplateView
 
 
                
@@ -31,7 +32,10 @@ urlpatterns = [
     path('menu/',views.menu, name='menu'),
     path('Acceuil/',views.Acceuil,name='Acceuil'),
     path('mesannonces/',views.mesannonces,name='mesannonces'),
+    path('annonces/',views.annonces,name='annonces'),
     path('home/',views.home,name='home'),
+    path('contact/', contact_view, name='contact'),
+    
 
 ]
 

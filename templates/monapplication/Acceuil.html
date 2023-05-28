@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>animal website</title>
+	<title>Acceuil</title>
 	{% load static %}
 <link rel="stylesheet"  type="text/css" href="{% static 'Acceuil.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
@@ -17,20 +17,14 @@
 			
 <li><a href="#">ABOUT</a></li>
 <li><a href="#">ADOPT ME </a></li>
-<li><a href="#">CONTACT</a></li>
+<li><a href="{% url 'contact' %}">CONTACT</a></li>
 <li><a href="{% url 'inscription' %}">SIGNUP</a></li>
      	 </ul>
-		 <div class="navbar-icons"> 
-			<img src="{% static 'images/téléchargement.png' %}">
-			<img src="{% static 'images/contact icon.png' %}">
-			<img src="{% static 'images/sign up.png' %}">
-		 </div>
-		</div> 
-		
+		 
 			
 			</div>
 
-			<video autoplay loop muted style="width:1300px ; margin-left:2% ">
+			<video autoplay loop muted style="width:100% ; ">
 				<source src="{% static 'images/rrr.mp4'%}" type="video/mp4">
 				
 			  </video>

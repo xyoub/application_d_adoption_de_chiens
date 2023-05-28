@@ -29,7 +29,15 @@ LOGOUT_REDIRECT_URL = 'accueil'
 
 AUTH_USER_MODEL = "monapplication.Utilisateur" 
 ALLOWED_HOSTS = []
+#----------------------------------------------------------
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.example.com'  # Votre hôte SMTP
+EMAIL_PORT = 587  # Port SMTP, généralement 587 pour TLS ou 465 pour SSL
+EMAIL_USE_TLS = True  # Si votre serveur SMTP utilise TLS
+EMAIL_HOST_USER = 'pet paradise'  # Votre adresse email
+EMAIL_HOST_PASSWORD = 'slifdahhjfrkwdkh'  # Votre mot de passe email
 
+#----------------------------------------------------------
 
 # Application definition
 
@@ -53,7 +61,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
+
+
 
 ROOT_URLCONF = 'monprojet.urls'
 
@@ -74,7 +85,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'monprojet.wsgi.application'
-
+###############################################################################################################################
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

@@ -3,9 +3,9 @@
   box-sizing: border-box;
  display: flex;
  flex-wrap: wrap;
-  padding: 2%;
+  padding: 3%;
   
-  width: 1367px;
+  width: 100%;
  
   background-color: rgb(17, 19, 19);
 
@@ -31,4 +31,7 @@
 .head{
   height: 100px;
   background-color: rgb(255, 255, 255);
+}
+#btn-primary{
+color: black;
 }
