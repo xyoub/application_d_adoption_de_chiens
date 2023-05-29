@@ -1,6 +1,7 @@
 
 
-*{
+body{
+	background-color: #441c6e;
 	margin: 0;
 	padding: 0;
 	font-family: 'Dosis', sans-serif;
@@ -55,16 +56,18 @@
   ul li a:hover::after{
 	  width: 100%;
   }
-  .navbar-icons img{
-	  height: 25px;
-	  margin-left: 100px;
-	  cursor: pointer;
+  .navbar-icons img {
+	height: 25px;
+	margin-left: 200px; /* Change margin-left to 0 */
+	cursor: pointer;
   }
-  .navbar-icons{
-	  position: absolute;
-	  top: 100px;
-	  right: 0;
-	}
+  
+  .navbar-icons {
+	position: absolute;
+	top: 100px;
+	left: 10px; /* Change right to left */
+  }
+  
    .banner{
    display: flex;
    margin-top: 50px;

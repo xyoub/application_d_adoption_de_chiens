@@ -4,9 +4,9 @@
             <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
            <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
               <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        {%load static%}
-           
-
+                  {%load static%}
+            
+            
             <link rel="stylesheet" type="text/css" href="{% static 'menu.css' %}">
             </head>
           
@@ -16,8 +16,8 @@
               <label for="active" class="close"></label>
               <div class="wrapper">
                 <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#"> posts</a></li>
+          <li><a href="{% url 'Acceuil' %}">Home</a></li>
+          <li><a href="{% url 'mesannonces' %}"> posts</a></li>
 
 
           <li><a href="#"> account</a></li>
@@ -29,7 +29,7 @@
                 <div class="title">
            welcome to Pet Paradise</div>
           <p>
-          for pet lovers  
+           for pet lovers  
           </p>
           </div>
           </body>

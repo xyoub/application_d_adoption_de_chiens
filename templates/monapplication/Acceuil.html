@@ -10,27 +10,27 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="hero">
+	<div class="hero" style="padding:0; ">
 		<div dlass="navbar">
-		 <img src=	"{% static 'images/LOGO 2.png' %}"style="max-width: 	150px;">
+		 <a href="{% url 'Adds' %}"><img src=	"{% static 'images/LOGO 2.png' %}"style="max-width:150px; margin-right:3%"></a>
 		 <ul>
 			
 <li><a href="#">ABOUT</a></li>
-<li><a href="#">ADOPT ME </a></li>
+<li><a href="{% url 'Adds' %}">ADOPT ME </a></li>
 <li><a href="#">CONTACT</a></li>
-<li><a href="{% url 'inscription' %}">SIGNUP</a></li>
+{% if user.is_authenticated %}
+<li><a href="{% url 'menu' %}"> Mon profile</a></li>
+{% else %}
+<li><a href="{% url 'inscription' %}"> sign up</a></li>
+{% endif %}
      	 </ul>
-		 <div class="navbar-icons"> 
-			<img src="{% static 'images/téléchargement.png' %}">
-			<img src="{% static 'images/adopt me.jpg' %}">
-			<img src="{% static 'images/contact icon.png' %}">
-			<img src="{% static 'images/sign up.png' %}">
-		 </div>
+		
 		</div> 
 		
 			
 			</div>
-			<video autoplay loop muted>
+
+			<video autoplay loop muted style="width:1300px ; margin-left:2% ">
 				<source src="{% static 'images/rrr.mp4'%}" type="video/mp4">
 				
 			  </video>

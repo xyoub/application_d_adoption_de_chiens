@@ -30,8 +30,23 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('menu/',views.menu, name='menu'),
     path('Acceuil/',views.Acceuil,name='Acceuil'),
+    path('mesannonces/',views.mesannonces,name='mesannonces'),
+    path('home/',views.home,name='home'),
+    path('Ajouterannonce/',views.Ajouterannonce,name='Ajouterannonce'), 
+    path('Ajouteran/',views.Ajouterann,name='Ajouterann'),  
+    path('modifier/<int:aid>',views.modifier,name='modifier'), 
+    path('Modifier/<int:aid>',views.Modifier,name='Modifier'),
+    path('details/<int:id>',views.details,name='details'), 
+    path('delete/<int:rowid>',views.delete, name='delete'),  
+    path('Adds/', views.Adds, name='Adds'),
 
 ]
 
 
 
+from django.conf import settings
+
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
