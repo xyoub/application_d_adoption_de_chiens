@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annonces</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mesannonces.css' %}">
+   <link rel="icon" type="image/png" href="./appartment.png" >
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@200&family=Ysabeau:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+  
+    <style>
+	/* width */
+	
+	 ::-webkit-scrollbar {
+		width: 20px;
+	}
+	/* Track */
+	
+	 ::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 1px grey;
+		border-radius: 10px;
+	}
+	/* Handle */
+	
+	 ::-webkit-scrollbar-thumb {
+		background: #000000;
+		border-radius: 10px;
+	}
+	/* Handle on hover */
+	
+	 ::-webkit-scrollbar-thumb:hover {
+		background: #4D7890;
+	}
+
+    
+ 
+nav {
+    background-color: rgba(255, 255, 255, 0.904);
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo img {
+    margin-top: 6px;
+    width: 126px;
+    height: 80px;
+    transform: scale(1.5);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  nav li {
+    margin-left: 20px;
+  }
+  .navbar {
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+  }
+  nav a {
+    display: block;
+    color: #c4b3c1;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Ysabeau', sans-serif;
+    font-size: 18px;
+  }
+  .navbar li {
+    padding: 0 10px;
+  }
+  nav a:hover {
+    color: #121011;
+  }
+
+    
+  </style>
+    <nav>
+      <div class="logo">
+       <a href="{% url 'Acceuil' %} "><img src="{% static 'images/LOGO 2.png' %}" alt="Animal paw logo" style="width:90%" ></a> 
+      </div>
+      <ul>
+        <li><a href=""> About </a></li>
+        <li><a href="{% url 'Adds' %}"> get your pet  </a></li>
+        <li><a href="{% url 'contact' %}">CONTACT</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'menu' %}"> profile</a></li>
+        {%  else %}
+        <li><a href="{% url 'inscription' %}"> signup</a></li>
+        {% endif %}
+      </ul>
+    </nav> 
+<div class="annonces">
+  {% for a in Annonces %}
+  <div class="card" >
+    <img src= "{{ a.image.url }}"    class="card-img-top" >
+    <div class="card-body">
+      <h1>{{a.sex}}</h1>
+      <h2>{{a.race}}</h2>
+      
+     
+      <a href="{% url 'details'  id=a.id %} " class="btn btn-primary">Adopter</a> 
+    </div>
+   
+  </div>
+   {% endfor %}
+  
+</div>
+
+<script>
+    let currentTitle = document.title;
+window.addEventListener("blur", () => {
+    document.title = "ADOPTE MOI 🐕‍🦺🐶";
+});
+window.addEventListener("focus", () => {
+    document.title = currentTitle;
+});
+</script>
+</body>
+</html>

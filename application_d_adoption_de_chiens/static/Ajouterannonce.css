@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+.ajt{
+    width: 500px;
+    box-sizing: border-box;
+    margin-left: 29%;
+    margin-top: 6%;
+    background-color: rgba(42, 36, 36, 0.364);
+    padding: 2%;
+   
+   
+}
+
+
+
+.ff{
+   width: 500px;
+}
+label{
+    display: inline-block;
+    width: 40%;
+}
+input[type="text"],input[type="number"]{
+    width: 40%;
+}
+.file{
+    margin: 2%;
+}
+#maison{
+    margin-left: 5%;
+}
+.p1{
+    margin-bottom: 7%;
+}

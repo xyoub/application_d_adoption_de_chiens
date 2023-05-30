@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {%load static%}
+        <link rel="stylesheet" href="{% static 'cc.css' %}">
+        <link rel="stylesheet"  type="text/css" href="{% static 'Acceuil.css' %}    ">
+        <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
+        <title>Document</title>
+    </head> 
+
+    <body>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        <div class="hero" >
+            <div class="navbar">
+                <img href="{% url 'home' %}" src=	"{% static 'images/LOGO 2.png' %}"style="max-width:150px; margin-right:3%">
+                <ul>		
+                    <li><a href="{% url 'Acceuil' %}">ABOUT</a></li>
+                    <li><a href="{% url 'Adds' %}">ADOPT ME </a></li> 
+                    <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                    {% if user.is_authenticated %}
+<li><a href="{% url 'menu' %}"> MON PROFILE</a></li>
+{% else %}
+<li><a href="{% url 'inscription' %}"> sign up</a></li>
+{% endif %}
+                </ul>
+            </div>
+        </div>
+
+        <form method="post" class="mt-16 ml-[50vh] pt-12 border-2 w-[100vh] shadow-lg">
+            {% csrf_token %}
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} text-green-500 ml-4 text-lg -translate-y-5" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <ul class="contactList text-xl ">
+                <li id="name" class="contact">
+                    <label>NAME</label><br/>
+                    {{ form.name }}
+                </li>
+                <li id="email" class="contact">
+                    <label>EMAIL</label> <br/>
+                    {{ form.email }}
+                </li>
+                <li id="subject" class="contact -translate-y-[31vh] mb-10"> 
+                    <label>SUBJECT</label><br/>
+                    {{ form.subject }}
+                </li>
+                <li id="message" class="contact">
+                    <label>MESSAGE</label><br/>
+                    {{ form.message }}
+                </li>
+            </ul>
+            <input type="submit" class="bg-green-800 p-2 rounded -translate-y-4 text-white"value="Submit">
+        </form>
+        <script>
+            let currentTitle = document.title;
+        window.addEventListener("blur", () => {
+            document.title = "ADOPTE MOI 🐕‍🦺🐶";
+        });
+        window.addEventListener("focus", () => {
+            document.title = currentTitle;
+        });
+        </script>
+    </body>
+</html>
+
+<!--<form method="post" class="test">
+   
+    {{ form.as_p }}
+    <button type="submit">Envoyer</button>
+</form> -->

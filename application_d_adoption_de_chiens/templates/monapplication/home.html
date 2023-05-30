@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+		.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			background-color: #f2f2f2;
+		}
+
+		.navbar ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+		}
+
+		.navbar ul li {
+			margin-right: 10px;
+		}
+
+		.navbar .navbar-logo {
+			max-width: 150px;
+		}
+
+		.navbar .navbar-icons img {
+			width: 30px;
+			height: 30px;
+			margin-right: 5px;
+		}
+	</style>
+
+<div class="navbar">
+    <img class="navbar-logo" src="path/to/logo.png" alt="Logo">
+    <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Adopt Me</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Sign Up</a></li>
+    </ul>
+    <div class="navbar-icons">
+        <img src="path/to/icon1.png" alt="Icon 1">
+        <img src="path/to/icon2.png" alt="Icon 2">
+        <img src="path/to/icon3.png" alt="Icon 3">
+        <img src="path/to/icon4.png" alt="Icon 4">
+    </div>
+</div>
+<script>
+    let currentTitle = document.title;
+window.addEventListener("blur", () => {
+    document.title = "ADOPTE MOI 🐕‍🦺🐶";
+});
+window.addEventListener("focus", () => {
+    document.title = currentTitle;
+});
+</script>
+</body>
+</html>

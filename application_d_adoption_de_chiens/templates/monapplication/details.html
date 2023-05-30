@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><details></details>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="details.css">  
+    <title>Document</title>
+</head>
+<body>
+
+{% load static%}
+
+  <style>
+    
+ 
+    nav {
+        background-color: rgba(255, 255, 255, 0.904);
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+      
+      .logo img {
+        margin-top: 6px;
+        width: 126px;
+        height: 80px;
+        transform: scale(1.5);
+      }
+      
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      
+      nav li {
+        margin-left: 20px;
+      }
+      .navbar {
+        border-radius: 0;
+        margin: 0;
+        width: 100%;
+      }
+      nav a {
+        display: block;
+        color: #c4b3c1;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: 'Ysabeau', sans-serif;
+        font-size: 18px;
+      }
+      .navbar li {
+        padding: 0 10px;
+      }
+      nav a:hover {
+        color: #121011;
+      }
+      </style>
+
+  
+
+  <nav>
+    <div class="logo">
+     <a href="{% url 'Acceuil' %} "><img src="{% static 'images/LOGO 2.png' %}" alt="Animal paw logo" style="width:90%" ></a> 
+    </div>
+    <ul>
+      <li><a href=""> About </a></li>
+      <li><a href="{% url 'Adds' %}"> get your pet  </a></li>
+      <li><a href="#">Contact </a> </li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'menu' %}"> profile</a></li>
+      {%  else %}
+      <li><a href="{% url 'inscription' %}"> signup</a></li>
+      {% endif %}
+    </ul>
+  </nav> 
+       
+     
+  <div class="row" >
+    <div class="col-md-6">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{an.image.url}}" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">mon {{ an.type}} his name is {{ an.nomanimal}}.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">{{ an.user.username}}</h5>
+          <p class="card-text">voila mes contact {{an.user.tel}} et mon email {{ an.user.gmail }}.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   
+  <style>
+   
+  </style>
+  <script>
+    let currentTitle = document.title;
+window.addEventListener("blur", () => {
+    document.title = "ADOPTE MOI 🐕‍🦺🐶";
+});
+window.addEventListener("focus", () => {
+    document.title = currentTitle;
+});
+</script>
+
+</body>
+</html>
